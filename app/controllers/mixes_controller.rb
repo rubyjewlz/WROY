@@ -35,8 +35,15 @@ class MixesController < ApplicationController
 	end
 end
 
+def destroy
+	@mixes = Mix.find(params[:id])
+	@mixes.destroy
+
+	redirect_to mixes_path
+end
+
 	private
 	def mixes_params
-		params.require(:mixes).permit(:title, :text)
+		params.require(:mix).permit(:title, :text)
 	end
 end
