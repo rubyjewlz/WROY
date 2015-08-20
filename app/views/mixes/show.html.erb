@@ -8,5 +8,7 @@
 	<%= @mixes.text %>	
 </p>
 
-<%= link_to 'Back', mixes_path %>
+
+<%= link_to 'Edit', edit_mix_path(@mixes) %> |
+<%= link_to 'Back', mix_path(@mixes) %>
 <%= link_to 'Home', controller: 'welcome' %>

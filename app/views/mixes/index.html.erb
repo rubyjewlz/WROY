@@ -5,12 +5,15 @@
 	<tr>
 		<th>Title</th>
 		<th>Description</th>
+		<th colspan="2"></th>
 	</tr>
 
 	<% @mixes.each do |mix| %>
 	<tr>
 		<td><%= mix.title %></td>
 		<td><%= mix.text %></td>
+		<td><%= link_to 'Show', mix_path(mix) %></td>
+		<td><%= link_to 'Edit', edit_mix_path(mix) %></td>
 	</tr>
 	<% end %>
 </table>

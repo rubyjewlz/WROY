@@ -1,6 +1,6 @@
 <h1>Editing Mix</h1>
 
-<%= form_for :mixes, url: mixes_path(@mixes), method: :patch do |f| %>
+<%= form_for :mixes, url: mix_path(@mixes), method: :patch do |f| %>
 	<% if @mixes.errors.any? %>
 	<div id="error_explanation">
 		<h2>
@@ -32,4 +32,4 @@
 
 	<% end %>
 
-	<%= link_to 'Back', articles_path %>
+	<%= link_to 'Back', mixes_path %>

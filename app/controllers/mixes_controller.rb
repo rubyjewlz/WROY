@@ -26,6 +26,15 @@ class MixesController < ApplicationController
 		end
 	end
 
+	def update
+		@mixes = Mix.find(params[:id])
+		if @mixes.update(mixes_params)
+		redirect_to @mixes
+	else
+		render 'edit'
+	end
+end
+
 	private
 	def mixes_params
 		params.require(:mixes).permit(:title, :text)
