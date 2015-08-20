@@ -9,13 +9,21 @@ class MixesController < ApplicationController
 	end
 
 	def new
+		@mixes = Mix.new
+	end
+
+	def edit
+		@mixes = Mix.find(params[:id])
 	end
 
 	def create
 		@mixes = Mix.new(mixes_params)
 
-		@mixes.save
-		redirect_to @mixes
+		if @mixes.save
+			redirect_to @mixes
+		else
+			render 'new'
+		end
 	end
 
 	private
