@@ -3,5 +3,9 @@
 	<p>
 		<%= user.fname %>
 		<%= user.lname %>
+		<%= user.username %>
 	</p>
 <% end %>
+
+<%= link_to 'List of Mixes', mixes_path %>
+<%= link_to 'Sign Out', 'sessions#destroy' %>

@@ -1,9 +1,13 @@
 class SessionsController < ApplicationController
 
+  def index
+    redirect_to root_path
+  end
+
   def destroy
     session[:user_id] = nil
     flash[:alert] = "Successfully Logged Out"
-    redirect_to '/login_signup'
+    redirect_to root_path
   end
 
   def create
@@ -20,7 +24,7 @@ class SessionsController < ApplicationController
       if @user.password == password
         session[:user_id] = @user.id
         flash[:alert] = "Welcome!"
-        redirect_to mixes_path
+        redirect_to mix_path
       else
         #wrong password case
         flash[:alert] = "Incorrect credentials"
