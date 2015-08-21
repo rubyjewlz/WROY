@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       if @user.password == password
         session[:user_id] = @user.id
         flash[:alert] = "Welcome!"
-        redirect_to '/posts'
+        redirect_to mixes_path
       else
         #wrong password case
         flash[:alert] = "Incorrect credentials"

@@ -1,36 +1,7 @@
-<h1>Login</h1>
-<br>
-  <%= form_tag '/users' do %>
-    <%= label_tag "Login:" %>
-    <br>
-    <%= text_field_tag :username, nil, placeholder: "Username" %>
-    <br>
-    <%= password_field_tag :password, nil, placeholder: "Password" %>
-    <br>
-    <%= submit_tag "Log In" %>
-  <% end %>
-
-
-<% if flash[:alert] %>
-  <div style="background:yellow;">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
-
-<br><br><br>
-
-
- <%= form_for @users do |f| %>
-  <%=f.label "Sign Up Here" %>
-  <br>
-  <%= f.text_field :fname, placeholder: "First Name" %>
-  <br>
-  <%=f.text_field :lname, placeholder: "Last Name"  %>
-  <br>
-  <%=f.text_field :username, placeholder: "Username"  %>
-  <br>
-  <%=f.password_field :password, placeholder: "Password"  %>
-  <br>
-
-  <%=f.submit :"Sign Up" %>
+<h1>User Index</h1>
+<% @users.each do |user| %>
+	<p>
+		<%= user.fname %>
+		<%= user.lname %>
+	</p>
 <% end %>
